@@ -30,6 +30,7 @@ Plugin 'ascenator/L9', {'name': 'newL9'}
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'tomasr/molokai'
 Plugin 'scrooloose/nerdtree'
+Plugin 'tenfyzhong/CompleteParameter.vim'
 "
 " " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -73,4 +74,11 @@ function! ClosePair(char)
 		return a:char
 	endif
 endfunction
+
+"CompleteParameter.vim vim参数补齐插件的配置
+inoremap <silent><expr> ( complete_parameter#pre_complete("()")
+smap <c-j> <Plug>(complete_parameter#goto_next_parameter)
+imap <c-j> <Plug>(complete_parameter#goto_next_parameter)
+smap <c-k> <Plug>(complete_parameter#goto_previous_parameter)
+imap <c-k> <Plug>(complete_parameter#goto_previous_parameter)""))
 
